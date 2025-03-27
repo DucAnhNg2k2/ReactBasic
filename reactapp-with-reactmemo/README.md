@@ -1,6 +1,6 @@
-```
+``
 React.memo là một Higher Order Component (HOC) trong React, giúp tối ưu hóa hiệu suất của ứng dụng bằng cách ngăn ngừa các re-render không cần thiết của các component con. Nó hoạt động giống như một cơ chế memoization (ghi nhớ), giúp React chỉ re-render lại component con khi props của nó thay đổi.
-```
+``
 
 ### Mục đích của React.memo:
 - Tối ưu hiệu suất: React.memo giúp tránh việc re-render lại các component con khi props không thay đổi, tiết kiệm tài nguyên và thời gian tính toán, đặc biệt trong các ứng dụng phức tạp với nhiều component.
