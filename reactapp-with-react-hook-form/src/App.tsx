@@ -14,6 +14,7 @@ function App() {
     handleSubmit,
     formState: { errors },
     getValues,
+    setValue,
   } = useForm<ProductForm>({
     shouldFocusError: true,
     mode: "onSubmit",
@@ -28,6 +29,12 @@ function App() {
     console.log("[GetValue]: ", getValues()); // same
   };
 
+  const handleUpdateValue = () => {
+    setValue("name", "updated-product-name", {
+      // shouldValidate: true // rerender component
+    });
+  };
+
   return (
     <div className="App">
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -39,7 +46,14 @@ function App() {
           placeholder="name"
         />
         {errors.name && <p>[name error]: {errors.name.message}</p>}
-        <button type="submit"> Button </button>
+        <div>
+          <button type="button" onClick={handleUpdateValue}>
+            Button-Update-Name
+          </button>
+        </div>
+        <div>
+          <button type="submit"> Button </button>
+        </div>
       </form>
     </div>
   );
